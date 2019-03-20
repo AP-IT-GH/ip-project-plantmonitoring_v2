@@ -10,6 +10,7 @@ import { SensorsComponent } from './sensors/sensors.component';
 import { HistoryComponent } from './history/history.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ChartsModule,
     NgbModule.forRoot()
   ],
   providers: [],

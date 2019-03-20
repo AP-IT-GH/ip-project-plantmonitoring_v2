@@ -1,3 +1,102 @@
-<p>
-  
-</p>
+<html >
+<body style="background-color: #CBCBD7; ">
+<div><br></div>
+<div class="container-fluid" style="width: 95%">
+  <div class="row" style="margin-bottom:10px; font-family: 'Times New Roman', Times, serif"> 
+  <div class="col-md-2 " style="margin-bottom:10px; background-color: #fff; 
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); ">
+      <h3 style="margin-left: 5%; margin-top: 15%;">Sensors:</h3>
+      <br>
+      <button class="btn btn-md btn-secondary btn-block " type="submit">Sensor 1</button>
+      <button class="btn btn-md btn-secondary btn-block " type="submit">Sensor 2</button>
+      <button class="btn btn-md btn-secondary btn-block " type="submit">Sensor 3</button>
+      <button class="btn btn-md btn-secondary btn-block " type="submit">Sensor 4</button>
+      <button class="btn btn-md btn-secondary btn-block " type="submit">Add Sensor</button>
+  </div>
+  <div class="col-10" >
+  <div class="row" style="margin-bottom:10px;"> 
+      <div class="col-md-3 pr-md-1"  >
+        <div class="" style="background-color: #fff; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); height: 100% ; background-color: #fff;">
+          <div style="height: 11%"></div>
+          <div style="margin-left: 5%; height: 11%;">
+            <img class="img-responsive" src="assets/images/temperature.png" alt="" style="height:100%; float: left"/> 
+            <h3>&ensp;Temperature</h3>
+          </div>
+          <div style="height: 25%"><br></div>
+          <div style="height: 25%"style="text-align: center; ">
+            <h1 style="font-size:400%;">21°C</h1>
+          </div> 
+          <div  style="height: 25%"><br></div>    
+        </div>
+      </div>
+      <div class="col-md-9 pr-md-1" >
+      <div class="" style="background-color: #fff; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); background-color: #fff;">
+          <br>
+        <h3 style="margin-left: 5%;" >Temperature</h3>
+      <canvas baseChart height="62"
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          [colors]="barChartColorsTemperature"></canvas>
+    </div>
+  </div>
+  </div>
+  <div class="row" style="margin-bottom:10px;  "> 
+    <div class="col-md-3 pr-md-1"  >
+      <div class="" style="background-color: #fff; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); height: 100%;  background-color: #fff;">
+          <div style="height: 11%"></div>
+          <div style="margin-left: 5%; height: 12%"><img class="img-responsive" src="assets/images/pressure.png" alt="" style="height:100%; float: left"/><h3>&ensp;Pressure</h3></div>
+        <div style="height: 25%"><br></div>
+        <div style="height: 25%"style="text-align: center; ">
+          <h1 style="font-size:400%;">1028.9 hPa</h1>
+        </div> 
+        <div  style="height: 25%"><br></div>    
+      </div>
+    </div>
+        <div class="col-md-9 pr-md-1" >
+        <div class="" style="background-color: #fff; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); background-color: #fff;">
+            <br>
+          <h3 style="margin-left: 5%;">Pressure</h3>
+        <canvas baseChart  height="62"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType" 
+            [colors]="barChartColorsPressure"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-bottom:10px;"> 
+    <div class="col-md-3 pr-md-1"  >
+      <div class="" style="background-color: #fff; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); height: 100%;  background-color: #fff;">
+          <div style="height: 11%"></div>
+          <div style="margin-left: 5%; height: 12%"><img class="img-responsive" src="assets/images/humidity.png" alt="" style="height:100%; float: left"/><h3>&ensp;Humidity</h3></div>
+        <div style="height: 25%"><br></div>
+        <div style="height: 25%"style="text-align: center; ">
+          <h1 style="font-size:400%;">41 %</h1>
+        </div> 
+        <div  style="height: 25%"><br></div>    
+      </div>
+    </div>
+        <div class="col-md-9 pr-md-1" >
+        <div class="" style="background-color: #fff; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);  background-color: #fff;">
+        <br>
+        <h3 style="margin-left: 5%;">Humidity</h3>
+        <canvas baseChart height="62"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            [colors]="barChartColorsHumidity"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>
