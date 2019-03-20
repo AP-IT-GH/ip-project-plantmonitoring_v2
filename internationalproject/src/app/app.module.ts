@@ -10,6 +10,7 @@ import { SensorsComponent } from './sensors/sensors.component';
 import { HistoryComponent } from './history/history.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { LoginComponent } from './login/login.component';
     HistoryComponent,
     FooterComponent,
     LoginComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
