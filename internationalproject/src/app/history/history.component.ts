@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SensorsService, Sensorinfo } from '../Services/sensors.service';
 
 @Component({
   selector: 'app-history',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor() { }
+  sensorInfo:Sensorinfo;
+  constructor(public data:SensorsService) {
+    this.data.getData().subscribe((info) => {
+      this.sensorInfo = info;
+    })
+   }
 
   ngOnInit() {
-  }
 
+  }
 }

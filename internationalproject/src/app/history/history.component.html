@@ -1,3 +1,30 @@
-<p>
-  history works!
-</p>
+<h1>Sensors</h1>
+
+ <p *ngIf="!sensorInfo"><em>Loading...</em></p> 
+
+<table class='table' *ngIf="sensorInfo">
+  <thead>
+    <tr>
+      <th>Sensor Id</th>
+      <th>Temperature C.</th>
+      <th>Hour</th>
+      <th>Date</th>
+      <th>Humidity</th>
+      <th>Pressure</th>
+      <th>Altitude</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sensor of sensorInfo.data">
+      <td>{{ sensor.sensor_id }}</td>
+      <td>{{ sensor.temperature }}</td>
+      <td>{{ sensor.hour }}</td>
+      <td>{{ sensor.date }}</td>
+      <td>{{ sensor.humidity }}</td>
+      <td>{{ sensor.pressure }}</td>
+      <td>{{ sensor.altitude }}</td>
+      <td>{{sensor.ativo}}</td>
+    </tr>
+  </tbody>
+</table>
