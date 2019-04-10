@@ -11,16 +11,6 @@ export class SensorsService {
   sensors: Sensor[];
 
   constructor(private http: HttpClient) { }
-/*   getAll(): Observable<Sensor[]> {
-    return this.http.get(`${this.baseUrl}/getlist.php`).pipe(
-      map((res) => {
-        this.sensors = res['data'];
-        console.log(this.sensors);
-        return this.sensors;
-    }),
-    catchError(this.handleError));
-
-  } */
 
   getData(){
     return this.http.get<Sensorinfo>(`${this.baseUrl}/getlist.php`)
