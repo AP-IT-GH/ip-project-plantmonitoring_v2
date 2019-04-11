@@ -5,7 +5,7 @@
 require 'connect.php';
     
 $sensors = [];
-$sql = "SELECT sensor_id,temperature , humidity , pressure , altitude , ativo FROM sensors";
+$sql = "SELECT sensor_id,temperature ,date,hour , humidity , pressure , altitude , ativo FROM sensors";
 
 if($result = mysqli_query($con,$sql))
 {
@@ -14,6 +14,8 @@ if($result = mysqli_query($con,$sql))
   {
     $sensors[$cr]['sensor_id']    = $row['sensor_id'];
     $sensors[$cr]['temperature'] = $row['temperature'];
+    $sensors[$cr]['hour'] = $row['hour'];
+    $sensors[$cr]['date'] = $row['date'];
     $sensors[$cr]['humidity'] = $row['humidity'];
     $sensors[$cr]['pressure'] = $row['pressure'];
     $sensors[$cr]['altitude'] = $row['altitude'];

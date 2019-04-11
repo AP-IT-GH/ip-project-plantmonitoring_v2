@@ -1,5 +1,8 @@
 <?php
-
+//allow angular to access api
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 // db credentials
 define('DB_HOST', '104.198.216.26');
 define('DB_USER', 'root');
