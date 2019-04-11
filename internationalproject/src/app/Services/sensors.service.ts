@@ -7,25 +7,37 @@ import { Sensor } from '../sensors/sensors.component';
   providedIn: 'root'
 })
 export class SensorsService {
-  baseUrl = 'http://localhost/DATABASES/PHPApi/';
+  baseUrl = 'http://localhost/DATABASES/PHPApi';
   sensors: Sensor[];
 
   constructor(private http: HttpClient) { }
-  getAll(): Observable<Sensor[]> {
-    return this.http.get(`${this.baseUrl}/getlist.php`).pipe(
-      map((res) => {
-        this.sensors = res['data'];
-        return this.sensors;
-    }),
-    catchError(this.handleError));
 
-
+  getData(){
+    return this.http.get<Sensorinfo>(`${this.baseUrl}/getlist.php`)
   }
+
   private handleError(error: HttpErrorResponse) {
     console.log(error);
    
     // return an observable with a user friendly message
     return throwError('Error! something went wrong.');
   }
+
+
+}
+
+export interface ISensor{
+  sensor_id: string;
+  temperature: string;
+  hour: string;
+  date: string;
+  humidity: string;
+  pressure: string;
+  altitude?: any;
+  ativo: string;
+}
+
+export interface Sensorinfo{
+  data: ISensor[];
 }
 

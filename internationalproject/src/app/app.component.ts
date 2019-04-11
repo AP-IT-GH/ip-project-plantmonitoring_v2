@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-
-@Component({
+import { LoginComponent } from './login/login.component';
+ @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(){}
+  rootPage: any = LoginComponent;
+
+  constructor(){
+  }
 }
