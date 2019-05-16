@@ -16,6 +16,10 @@ import { AdminComponent } from './admin/admin.component';
 import { UserService } from './Services/user.service';
 import { AuthenticationService } from './Services/authentication.service';
 import {AuthhGuard} from './Guards/authh.guard';
+import {DataViewModule} from 'primeng/dataview';
+import {TableModule} from 'primeng/table';
+import {PaginatorModule} from 'primeng/paginator';
+
 
 
 
@@ -37,6 +41,9 @@ import {AuthhGuard} from './Guards/authh.guard';
     AppRoutingModule,
     HttpClientModule,
     ChartsModule,
+    DataViewModule,
+    TableModule,
+    PaginatorModule,
     NgbModule.forRoot()
   ],
   providers: [AuthhGuard,AuthenticationService,UserService],
