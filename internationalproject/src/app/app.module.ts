@@ -19,6 +19,8 @@ import {AuthhGuard} from './Guards/authh.guard';
 import {DataViewModule} from 'primeng/dataview';
 import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
+import {NgxPaginationModule} from 'ngx-pagination';  
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -44,6 +46,7 @@ import {PaginatorModule} from 'primeng/paginator';
     DataViewModule,
     TableModule,
     PaginatorModule,
+    NgxPaginationModule,Ng2SearchPipeModule,
     NgbModule.forRoot()
   ],
   providers: [AuthhGuard,AuthenticationService,UserService],
