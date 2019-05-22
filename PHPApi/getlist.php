@@ -5,14 +5,17 @@
 require 'connect.php';
     
 $sensors = [];
-$sql = "SELECT sensor_id,temperature ,date,hour , humidity , pressure , altitude , ativo FROM sensors";
+$sql = 
+"SELECT *
+FROM sensors
+ORDER BY date DESC";
 
 if($result = mysqli_query($con,$sql))
 {
   $cr = 0;
   while($row = mysqli_fetch_assoc($result))
   {
-    $sensors[$cr]['sensor_id']    = $row['sensor_id'];
+    $sensors[$cr]['id_sensor']    = $row['id_sensor'];
     $sensors[$cr]['temperature'] = $row['temperature'];
     $sensors[$cr]['hour'] = $row['hour'];
     $sensors[$cr]['date'] = $row['date'];

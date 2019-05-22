@@ -24,3 +24,4 @@ function connect()
 }
 
 $con = connect();
+?>
