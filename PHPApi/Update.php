@@ -2,7 +2,7 @@
 require 'connect.php';
 
 // Get the posted data.
-$postdata = file_get_contents("php://input");
+$postdata = file_get_contents("localhost:4000");
 
 if(isset($postdata) && !empty($postdata))
 {
@@ -10,17 +10,17 @@ if(isset($postdata) && !empty($postdata))
   $request = json_decode($postdata);
 
   // Validate.
-  if ((int)$request->id < 1 || trim($request->number) == '' || (float)$request->amount < 0) {
+  if ((int)$request->id < 1 || trim($request->username) == '' || (float)$request->password < 0) {
     return http_response_code(400);
   }
 
   // Sanitize.
   $id    = mysqli_real_escape_string($con, (int)$request->id);
-  $number = mysqli_real_escape_string($con, trim($request->number));
-  $amount = mysqli_real_escape_string($con, (float)$request->amount);
+  $username = mysqli_real_escape_string($con, trim($request->usename));
+  $password = mysqli_real_escape_string($con, (float)$request->password);
 
   // Update.
-  $sql = "UPDATE `policies` SET `number`='$number',`amount`='$amount' WHERE `id` = '{$id}' LIMIT 1";
+  $sql = "UPDATE `users` SET `username`='$username',`password`='$password' WHERE `id` = '{$id}' LIMIT 1";
 
   if(mysqli_query($con, $sql))
   {
