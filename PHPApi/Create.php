@@ -22,7 +22,7 @@ if(isset($postdata) && !empty($postdata))
 
 
   // Create.
-  $sql = "INSERT INTO `policies`(`id`,`number`,`amount`) VALUES (null,'{$number}','{$amount}')";
+  $sql = "INSERT INTO ``(`id`,`number`,`amount`) VALUES (null,'{$number}','{$amount}')";
 
   if(mysqli_query($con,$sql))
   {
