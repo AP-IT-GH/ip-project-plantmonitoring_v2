@@ -1,23 +1,27 @@
-<h1>Sensors</h1>
-
+<!--loadingpage-->
  <p *ngIf="!sensorInfo"><em>Loading...</em></p> 
 
-<table class='table' *ngIf="sensorInfo">
-  <thead>
-    <tr>
-      <th>Sensor Id</th>
-      <th>Temperature C.</th>
-      <th>Hour</th>
-      <th>Date</th>
-      <th>Humidity</th>
-      <th>Pressure</th>
-      <th>Altitude</th>
-      <th>Active</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let sensor of sensorInfo.data">
-      <td>{{ sensor.sensor_id }}</td>
+<div class="conatiner" style="padding-top:20px;">  
+  <div class="col-sm-5" style="padding-top:20px;padding-bottom:20px;" >  
+       <input class="form-control" [ngModelOptions]="{standalone:true}" type="text" placeholder="Search......." [(ngModel)]="term">        
+  </div>  
+</div>  
+  <table class="table table-striped">  
+    <thead class="thead-dark">  
+      <tr>  
+        <th>Sensor Id</th>
+        <th>Temperature C.</th>
+        <th>Hour</th>
+        <th>Date</th>
+        <th>Humidity</th>
+        <th>Pressure</th>
+        <th>Altitude</th>
+        <th>Active</th>
+      </tr>  
+    </thead>  
+    <tbody>  
+      <tr *ngFor="let sensor of sensorInfo.data |filter : term| paginate: { itemsPerPage: 6, currentPage: p }">  
+      <td>{{ sensor.id_sensor }}</td>
       <td>{{ sensor.temperature }}</td>
       <td>{{ sensor.hour }}</td>
       <td>{{ sensor.date }}</td>
@@ -25,6 +29,12 @@
       <td>{{ sensor.pressure }}</td>
       <td>{{ sensor.altitude }}</td>
       <td>{{sensor.ativo}}</td>
-    </tr>
-  </tbody>
-</table>
+      </tr>  
+    </tbody>  
+    <ul class="pagination">  
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>  
+        </ul>  
+  </table>  
+
+
+

@@ -1,1 +1,15 @@
-<h2>Login</h2>
+<div class="login-page">
+    <div class="form">
+      <form class="register-form">
+        <input type="text" placeholder="name"/>
+        <input type="password" placeholder="password"/>
+        <input type="text" placeholder="email address"/>
+        <button>create</button>
+      </form>
+      <form (submit)="loginuser($event)" class="login-form">
+        <input type="text" placeholder="username" id="username"/>
+        <input type="password" placeholder="password" id="password"/>
+        <input type ="submit" value="submit" id="submitbtn">
+      </form>
+    </div>
+  </div>

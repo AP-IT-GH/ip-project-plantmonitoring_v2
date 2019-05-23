@@ -3,14 +3,17 @@ import { HttpClient } from '@angular/common/http';
 
 import { User } from 'src/app/models/user';
 import { config } from 'rxjs';
-
+interface mydata {
+message : string
+success : boolean
+}
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
     constructor(private http: HttpClient) { }
 
     getAll() {
-      //  return this.http.get<User[]>(`${config.apiUrl}/users`);
+       return this.http.get<mydata>('http://localhost/DATABASES/PHPApi/connect.php');
     }
 
     getById(id: number) {
